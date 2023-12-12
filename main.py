@@ -4,14 +4,14 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 import pandas as pd
+import sqlalchemy as sc
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# create connection to new and old database both of theme is mysql in one database two schema
+engine = sc.create_engine('mysql+pymysql://root:root@localhost:3391/new_db')
+engine2 = sc.create_engine('mysql+pymysql://root:root@localhost:3391/old_db')
+
+# select map file from json file for each table
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
